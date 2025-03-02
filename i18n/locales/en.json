@@ -30,22 +30,19 @@
     "description": "Choose from our range of luxury nail treatments, each performed with exceptional care and expertise.",
     "view_all": "View All Services",
     "book_now": "Book now",
+    "minutes": "Minutes",
     "items": {
       "1": {
-        "title": "Classic Manicure",
-        "description": "A timeless treatment that shapes the nails, cares for cuticles, and finishes with a polish of your choice."
+        "name": "Sculpted Acrylic Nails",
+        "description": "High-quality sculpted acrylic nails."
       },
       "2": {
-        "title": "Gel Extensions",
-        "description": "Extend the length of your natural nails with durable gel for a beautiful, natural-looking enhancement."
+        "name": "Acrylic Overlay Nails",
+        "description": "Elegant acrylic overlay for a polished finish."
       },
       "3": {
-        "title": "Luxury Spa Pedicure",
-        "description": "Indulge in a relaxing foot soak, exfoliation, massage, and perfect polish for rejuvenated feet."
-      },
-      "4": {
-        "title": "Nail Art Design",
-        "description": "Express your style with custom nail art, from subtle accents to elaborate designs by our skilled artists."
+        "name": "Semi-Permanent Pedicure",
+        "description": "Long-lasting semi-permanent polish for flawless feet."
       }
     }
   },

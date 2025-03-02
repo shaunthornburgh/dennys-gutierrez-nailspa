@@ -114,31 +114,18 @@
               {{ $t('services.description') }}
             </p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div
               v-for="(service, index) in services"
               :key="service.id"
               class="service-card group animate-slide-up opacity-0"
               :style="{ animationDelay: `${0.1 * (index + 1)}s`, animationFillMode: 'forwards' }"
             >
-              <div class="flex justify-between items-start mb-4">
-                <div class="p-2 rounded-lg bg-primary/10 mb-4">
-                  <component :is="service.icon" class="w-10 h-10 text-primary/80" />
-                </div>
-                <div class="text-right">
-                  <div class="text-primary font-semibold text-lg font-inter">{{ service.price }}</div>
-                  <div class="text-neutral-500 text-sm font-inter">{{ service.duration }}</div>
-                </div>
-              </div>
-              <h3 class="mb-2">{{ $t(`services.items.${service.id}.title`) }}</h3>
-              <p class="text-neutral-600 mb-4 font-inter">{{ $t(`services.items.${service.id}.description`) }}</p>
-              <nuxt-link to="#contact" class="inline-flex items-center text-primary hover:underline text-sm font-medium font-inter">
-                {{ $t('services.book_now') }}
-              </nuxt-link>
+              <Service :service="{ ...service, name: $t(`services.items.${service.id}.name`), description: $t(`services.items.${service.id}.description`) }" />
             </div>
           </div>
           <div class="text-center mt-12">
-            <nuxt-link to="#contact" class="btn btn-primary btn-md font-inter font-medium">{{ $t('services.view_all') }}</nuxt-link>
+            <nuxt-link to="#contact" class="btn btn-primary btn-md font-inter font-medium">{{ $t('services.book_now') }}</nuxt-link>
           </div>
         </div>
       </section>
@@ -664,10 +651,24 @@ const formData = ref({
 
 // --- Services data ---
 const services = [
-  { id: 1, price: '$35', duration: '45 min', icon: 'Scissors' },
-  { id: 2, price: '$65', duration: '75 min', icon: 'Palette' },
-  { id: 3, price: '$55', duration: '60 min', icon: 'Heart' },
-  { id: 4, price: 'from $20', duration: '30+ min', icon: 'Sparkles' }
+  {
+    id: 1,
+    price: "125,000 COP",
+    icon: "fa-solid fa-hand-sparkles",
+    duration: 90,
+  },
+  {
+    id: 2,
+    price: "95,000 COP",
+    icon: "fa-solid fa-paint-brush",
+    duration: 60,
+  },
+  {
+    id: 3,
+    price: "40,000 COP",
+    icon: "fa-solid fa-shoe-prints",
+    duration: 45,
+  },
 ];
 
 // --- Gallery images ---

@@ -30,22 +30,19 @@
     "description": "Elige entre nuestra gama de tratamientos de uñas de lujo, cada uno realizado con un cuidado y experiencia excepcionales.",
     "view_all": "Ver Todos los Servicios",
     "book_now": "Reserva Ahora",
+    "minutes": "Minutos",
     "items": {
       "1": {
-        "title": "Manicura Clásica",
-        "description": "Un tratamiento atemporal que da forma a las uñas, cuida las cutículas y termina con un esmalte de tu elección."
+        "name": "Uñas Acrílicas Esculpidas",
+        "description": "Uñas esculpidas con acrílico de alta calidad."
       },
       "2": {
-        "title": "Extensiones de Gel",
-        "description": "Extiende la longitud de tus uñas naturales con gel duradero para una mejora hermosa y de aspecto natural."
+        "name": "Uñas Forradas en Acrílico",
+        "description": "Forrado en acrílico para un acabado elegante."
       },
       "3": {
-        "title": "Pedicura Spa de Lujo",
-        "description": "Disfruta de un baño relajante para pies, exfoliación, masaje y un esmalte perfecto para pies rejuvenecidos."
-      },
-      "4": {
-        "title": "Diseño de Arte en Uñas",
-        "description": "Expresa tu estilo con arte en uñas personalizado, desde detalles sutiles hasta diseños elaborados por nuestros artistas expertos."
+        "name": "Pies Semipermanente",
+        "description": "Esmalte semipermanente para pies impecables."
       }
     }
   },

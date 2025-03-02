@@ -3,7 +3,10 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/i18n'
   ],
-  css: ['~/assets/css/tailwind.css'],
+  css: [
+    '~/assets/css/tailwind.css',
+    '@fortawesome/fontawesome-free/css/all.css'
+  ],
   plugins: [
     '~/plugins/lucide.client.ts',
     '~/plugins/sonner.client.ts'
