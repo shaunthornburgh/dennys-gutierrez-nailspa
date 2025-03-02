@@ -20,6 +20,10 @@
     "book_appointment": "Book Appointment",
     "scroll_down": "Scroll Down"
   },
+  "seo": {
+    "title": "Dennys Gutierrez Nailspa - Luxury Nail Services",
+    "description": "Experience luxury nail services crafted with precision and creativity at Dennys Gutierrez Nailspa."
+  },
   "services": {
     "tagline": "Our Services",
     "title": "Premium Nail Services",
@@ -141,11 +145,12 @@
     "info_title": "Contact Information",
     "info": {
       "visit_title": "Visit Our Salon",
-      "address": "123 Beauty Lane, Suite 45\nNew York, NY 10001",
+      "address": "Cra. 41 #33b SUR 35, Zona 9, Envigado, Antioquia, Colombia",
       "call_title": "Call Us",
-      "phone": "212-555-7890",
-      "email_title": "Email Us",
-      "email": "appointmentspolishpalettehaven.com",
+      "phone": "+573122855002",
+      "email_title": "Envíanos un Correo",
+      "email_user": "degu1412",
+      "email_domain": "hotmail.com.ar",
       "hours_title": "Our Hours",
       "hours": "Monday - Friday: 9:00 AM - 7:00 PM\nSaturday: 9:00 AM - 6:00 PM\nSunday: 10:00 AM - 4:00 PM",
       "map_title": "Salon Location"
