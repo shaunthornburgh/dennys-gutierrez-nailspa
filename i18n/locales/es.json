@@ -143,13 +143,13 @@
     "info": {
       "visit_title": "Visita Nuestro Salón",
       "address": "Cra. 41 #33b SUR 35, Zona 9, Envigado, Antioquia, Colombia",
-      "call_title": "Llámanos",
+      "call_title": "Llámame",
       "phone": "+573122855002",
-      "email_title": "Envíanos un Correo",
+      "email_title": "Envíame un Correo",
       "email_user": "degu1412",
       "email_domain": "hotmail.com.ar",
-      "hours_title": "Nuestros Horarios",
-      "hours": "Lunes - Viernes: 9:00 AM - 7:00 PM\nSábado: 9:00 AM - 6:00 PM\nDomingo: 10:00 AM - 4:00 PM",
+      "hours_title": "Mi Horario de Trabajo",
+      "hours": "Lunes - Viernes: 10:30 AM - 7:00 PM\nSábado: 8:00 AM - 2:00 PM",
       "map_title": "Ubicación del Salón"
     }
   },
@@ -158,7 +158,7 @@
     "description": "Servicios premium de cuidado y arte en uñas para elevar tu estilo personal y aumentar tu confianza.",
     "quick_links_title": "Enlaces Rápidos",
     "contact": "Contacto",
-    "services_title": "Nuestros Servicios",
+    "services_title": "Mis Servicios",
     "services": {
       "paraffin": "Tratamientos de Parafina",
       "repair": "Reparación de Uñas"

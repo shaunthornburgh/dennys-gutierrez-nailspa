@@ -143,13 +143,13 @@
     "info": {
       "visit_title": "Visit Our Salon",
       "address": "Cra. 41 #33b SUR 35, Zona 9, Envigado, Antioquia, Colombia",
-      "call_title": "Call Us",
+      "call_title": "Call Me",
       "phone": "+573122855002",
-      "email_title": "Envíanos un Correo",
+      "email_title": "Send me un Email",
       "email_user": "degu1412",
       "email_domain": "hotmail.com.ar",
-      "hours_title": "Our Hours",
-      "hours": "Monday - Friday: 9:00 AM - 7:00 PM\nSaturday: 9:00 AM - 6:00 PM\nSunday: 10:00 AM - 4:00 PM",
+      "hours_title": "My Working Hours",
+      "hours": "Monday - Friday: 10:30 AM - 7:00 PM\nSaturday: 8:00 AM - 2:00 PM",
       "map_title": "Salon Location"
     }
   },
@@ -158,7 +158,7 @@
     "description": "Premium nail care and artistry services to elevate your personal style and boost your confidence.",
     "quick_links_title": "Quick Links",
     "contact": "Contact",
-    "services_title": "Our Services",
+    "services_title": "My Services",
     "services": {
       "paraffin": "Paraffin Treatments",
       "repair": "Nail Repair"
