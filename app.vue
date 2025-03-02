@@ -23,10 +23,28 @@
           <nuxt-link to="#about" class="nav-link">{{ $t('navbar.about') }}</nuxt-link>
           <nuxt-link to="#prices" class="nav-link">{{ $t('navbar.prices') }}</nuxt-link>
           <nuxt-link to="#testimonials" class="nav-link">{{ $t('navbar.testimonials') }}</nuxt-link>
-          <nuxt-link to="#contact" class="btn btn-primary btn-md ml-4">{{ $t('navbar.book_now') }}</nuxt-link>
+          <nuxt-link
+            to="#contact"
+            class="nav-link bg-primary !text-white font-semibold hover:bg-primary/90 ml-4"
+          >
+            {{ $t('navbar.book_now') }}
+          </nuxt-link>
+
           <div class="ml-4 flex space-x-2">
-            <button @click="setLocale('en')" class="nav-link" :class="{ 'text-primary': locale === 'en' }">EN</button>
-            <button @click="setLocale('es')" class="nav-link" :class="{ 'text-primary': locale === 'es' }">ES</button>
+            <button
+              @click="setLocale('en')"
+              class="nav-link transition-colors"
+              :class="{ 'border border-primary text-primary font-semibold rounded-md': locale === 'en', 'text-neutral-800': locale !== 'en' }"
+            >
+              EN
+            </button>
+            <button
+              @click="setLocale('es')"
+              class="nav-link transition-colors"
+              :class="{ 'border border-primary text-primary font-semibold rounded-md': locale === 'es', 'text-neutral-800': locale !== 'es' }"
+            >
+              ES
+            </button>
           </div>
         </div>
 
@@ -50,11 +68,29 @@
           <nuxt-link to="#about" class="text-xl nav-link" @click="isOpen = false">{{ $t('navbar.about') }}</nuxt-link>
           <nuxt-link to="#prices" class="text-xl nav-link" @click="isOpen = false">{{ $t('navbar.prices') }}</nuxt-link>
           <nuxt-link to="#testimonials" class="text-xl nav-link" @click="isOpen = false">{{ $t('navbar.testimonials') }}</nuxt-link>
-          <nuxt-link to="#contact" class="btn btn-primary btn-lg mt-6" @click="isOpen = false">{{ $t('navbar.book_now') }}</nuxt-link>
+          <nuxt-link
+            to="#contact"
+            class="text-xl nav-link bg-primary !text-white font-semibold hover:bg-primary/90 mt-6"
+            @click="isOpen = false"
+          >
+            {{ $t('navbar.book_now') }}
+          </nuxt-link>
           <!-- Language Switcher (Mobile) -->
           <div class="flex space-x-4 mt-6">
-            <button @click="setLocale('en')" class="text-xl nav-link" :class="{ 'text-primary': locale === 'en' }">EN</button>
-            <button @click="setLocale('es')" class="text-xl nav-link" :class="{ 'text-primary': locale === 'es' }">ES</button>
+            <button
+              @click="setLocale('en')"
+              class="text-xl nav-link transition-colors"
+              :class="{ 'border border-primary text-primary font-semibold rounded-md': locale === 'en', 'text-neutral-800': locale !== 'en' }"
+            >
+              EN
+            </button>
+            <button
+              @click="setLocale('es')"
+              class="text-xl nav-link transition-colors"
+              :class="{ 'border border-primary text-primary font-semibold rounded-md': locale === 'es', 'text-neutral-800': locale !== 'es' }"
+            >
+              ES
+            </button>
           </div>
         </div>
       </div>
@@ -68,7 +104,7 @@
           ref="imageRef"
           class="absolute right-0 top-1/2 transform -translate-y-1/2 w-1/2 h-3/4 image-glow opacity-80 md:opacity-100 pointer-events-none select-none"
           :style="{
-            backgroundImage: `url('https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1000&auto=format')`,
+            backgroundImage: `url('images/dennys-gutierrez-1.png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             borderRadius: '300px 0 0 300px',
@@ -215,16 +251,16 @@
               <div class="relative rounded-2xl overflow-hidden shadow-xl">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
                 <img
-                  src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1000&auto=format"
+                  src="/images/dennys-gutierrez-2.png"
                   :alt="$t('about.image_alt')"
                   class="w-full aspect-[3/4] object-cover"
                 />
               </div>
-              <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg max-w-xs">
-                <p class="text-lg italic font-serif text-neutral-700 font-playfair">
+              <div class="absolute -bottom-8 -right-8 bg-white p-6 rounded-lg shadow-xl max-w-sm border border-neutral-100 z-20">
+                <p class="text-xl italic font-playfair text-neutral-900 leading-relaxed">
                   {{ $t('about.quote') }}
                 </p>
-                <p class="text-right text-sm text-neutral-500 mt-2 font-inter">{{ $t('about.quote_author') }}</p>
+                <p class="text-right text-base text-neutral-600 mt-3 font-inter">{{ $t('about.quote_author') }}</p>
               </div>
             </div>
             <div>
@@ -441,10 +477,9 @@
                         class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 font-inter"
                       >
                         <option value="">{{ $t('contact.form.service_placeholder') }}</option>
-                        <option value="Classic Manicure">{{ $t('services.items.1.title') }}</option>
-                        <option value="Gel Extensions">{{ $t('services.items.2.title') }}</option>
-                        <option value="Luxury Spa Pedicure">{{ $t('services.items.3.title') }}</option>
-                        <option value="Nail Art Design">{{ $t('services.items.4.title') }}</option>
+                        <option v-for="service in services" :key="service.id" :value="$t(`services.items.${service.id}.name`)">
+                          {{ $t(`services.items.${service.id}.name`) }}
+                        </option>
                       </select>
                     </div>
                   </div>
@@ -513,7 +548,7 @@
                     </div>
                     <div>
                       <h4 class="font-medium font-playfair">{{ $t('contact.info.hours_title') }}</h4>
-                      <p class="text-neutral-600 font-inter">
+                      <p class="text-neutral-600 font-inter whitespace-pre-line">
                         {{ $t('contact.info.hours') }}
                       </p>
                     </div>
@@ -575,12 +610,11 @@
           <div>
             <h4 class="text-lg font-medium mb-6 font-playfair">{{ $t('footer.services_title') }}</h4>
             <ul class="space-y-3">
-              <li><nuxt-link to="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">{{ $t('services.items.1.title') }}</nuxt-link></li>
-              <li><nuxt-link to="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">{{ $t('services.items.2.title') }}</nuxt-link></li>
-              <li><nuxt-link to="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">{{ $t('services.items.3.title') }}</nuxt-link></li>
-              <li><nuxt-link to="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">{{ $t('services.items.4.title') }}</nuxt-link></li>
-              <li><nuxt-link to="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">{{ $t('footer.services.paraffin') }}</nuxt-link></li>
-              <li><nuxt-link to="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">{{ $t('footer.services.repair') }}</nuxt-link></li>
+              <li v-for="service in services" :key="service.id">
+                <nuxt-link to="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">
+                  {{ $t(`services.items.${service.id}.name`) }}
+                </nuxt-link>
+              </li>
             </ul>
           </div>
           <div>
@@ -675,8 +709,8 @@ const services = [
 const galleryImages = [
   { id: 1, src: 'https://images.unsplash.com/photo-1604902396830-aca29e19b067?q=80&w=1000&auto=format', category: 'Gel' },
   { id: 2, src: 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=1000&auto=format', category: 'French' },
-  { id: 3, src: 'https://images.unsplash.com/photo-1600014770603-0fd6989ee83e?q=80&w=1000&auto=format', category: 'Art' },
-  { id: 4, src: 'https://images.unsplash.com/photo-1610992235683-e42ab16aca8c?q=80&w=1000&auto=format', category: 'Minimal' },
+  { id: 3, src: 'https://images.unsplash.com/photo-1610992015762-45dca7fa3a85?q=80&w=1000&auto=format', category: 'Art' },
+  { id: 4, src: 'https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=1000&auto=format', category: 'Minimal' }, // Working replacement
   { id: 5, src: 'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=1000&auto=format', category: 'Art' },
   { id: 6, src: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1000&auto=format', category: 'Classic' }
 ];
