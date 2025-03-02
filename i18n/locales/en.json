@@ -1,0 +1,178 @@
+{
+  "navbar": {
+    "brand": "Dennys Gutierrez Nailspa",
+    "home": "Home",
+    "services": "Services",
+    "gallery": "Gallery",
+    "about": "About",
+    "prices": "Prices",
+    "testimonials": "Testimonials",
+    "book_now": "Book Now",
+    "close_menu": "Close menu",
+    "open_menu": "Open menu"
+  },
+  "hero": {
+    "tagline": "Premium Nail Art & Care",
+    "title_part1": "Elevate Your",
+    "title_part2": "Personal Style",
+    "description": "Experience luxury nail services crafted with precision and creativity. Your hands deserve the finest care.",
+    "explore_services": "Explore Services",
+    "book_appointment": "Book Appointment",
+    "scroll_down": "Scroll Down"
+  },
+  "services": {
+    "tagline": "Our Services",
+    "title": "Premium Nail Services",
+    "description": "Choose from our range of luxury nail treatments, each performed with exceptional care and expertise.",
+    "view_all": "View All Services",
+    "book_now": "Book now",
+    "items": {
+      "1": {
+        "title": "Classic Manicure",
+        "description": "A timeless treatment that shapes the nails, cares for cuticles, and finishes with a polish of your choice."
+      },
+      "2": {
+        "title": "Gel Extensions",
+        "description": "Extend the length of your natural nails with durable gel for a beautiful, natural-looking enhancement."
+      },
+      "3": {
+        "title": "Luxury Spa Pedicure",
+        "description": "Indulge in a relaxing foot soak, exfoliation, massage, and perfect polish for rejuvenated feet."
+      },
+      "4": {
+        "title": "Nail Art Design",
+        "description": "Express your style with custom nail art, from subtle accents to elaborate designs by our skilled artists."
+      }
+    }
+  },
+  "gallery": {
+    "tagline": "Our Work",
+    "title": "Nail Art Gallery",
+    "description": "Browse our collection of stunning nail designs created by our talented artists.",
+    "filters": {
+      "all": "All",
+      "gel": "Gel",
+      "french": "French",
+      "art": "Art",
+      "minimal": "Minimal",
+      "classic": "Classic"
+    },
+    "view_larger": "View larger image",
+    "close_lightbox": "Close lightbox",
+    "images": {
+      "1": { "alt": "Pink gel manicure with flowers" },
+      "2": { "alt": "French tip manicure design" },
+      "3": { "alt": "Artistic nail design" },
+      "4": { "alt": "Minimal nude manicure" },
+      "5": { "alt": "Colorful summer nail art" },
+      "6": { "alt": "Classic red manicure" }
+    }
+  },
+  "about": {
+    "tagline": "Our Story",
+    "title": "Committed to Nail Artistry",
+    "description_part1": "Polish Palette Haven was founded with a singular vision: to elevate nail care from a routine service to an art form. With over 15 years of experience in the beauty industry, our founder Sophie built a team of passionate nail artists who share her commitment to excellence.",
+    "description_part2": "We believe that everyone deserves a moment of luxury in their busy lives. Our salon provides not just nail services, but an experience of tranquility and personal care where you can rejuvenate both your nails and your spirit.",
+    "stats": {
+      "years_experience": "Years Experience",
+      "happy_clients": "Happy Clients",
+      "nail_artists": "Nail Artists",
+      "unique_designs": "Unique Designs"
+    },
+    "meet_team": "Meet Our Team",
+    "image_alt": "Nail artist at work",
+    "quote": "Beauty begins the moment you decide to be yourself.",
+    "quote_author": "— Coco Chanel"
+  },
+  "prices": {
+    "tagline": "Pricing",
+    "title": "Our Pricing",
+    "description": "Affordable luxury nail services tailored to your needs. Prices reflect our commitment to quality and care."
+  },
+  "testimonials": {
+    "tagline": "Client Love",
+    "title": "What Our Clients Say",
+    "description": "Our customers' experiences speak volumes about our commitment to excellence.",
+    "prev_testimonial": "Previous testimonial",
+    "next_testimonial": "Next testimonial",
+    "go_to_testimonial": "Go to testimonial {index}",
+    "items": {
+      "1": {
+        "name": "Sophia Rodriguez",
+        "role": "Fashion Designer",
+        "quote": "Polish Palette Haven transformed my simple ideas into stunning nail art. Their attention to detail and creativity exceeded my expectations."
+      },
+      "2": {
+        "name": "Emma Thompson",
+        "role": "Marketing Executive",
+        "quote": "The luxury pedicure was divine! It's not just a nail service, it's a complete relaxation experience that I look forward to every month."
+      },
+      "3": {
+        "name": "James Wilson",
+        "role": "Photographer",
+        "quote": "As someone who works with my hands constantly, I appreciate the durability of their gel extensions. Professional, friendly, and incredibly skilled."
+      },
+      "4": {
+        "name": "Olivia Chen",
+        "role": "Art Director",
+        "quote": "The nail artists at Polish Palette Haven are true masters of their craft. My wedding nails were absolutely perfect and lasted through the honeymoon!"
+      }
+    }
+  },
+  "contact": {
+    "tagline": "Get In Touch",
+    "title": "Book Your Appointment",
+    "description": "Schedule your nail session today and experience the artistry and care that sets us apart.",
+    "form_title": "Request an Appointment",
+    "form": {
+      "full_name": "Full Name",
+      "full_name_placeholder": "Your name",
+      "email": "Email Address",
+      "email_placeholder": "Your email",
+      "phone": "Phone Number",
+      "phone_placeholder": "Your phone",
+      "service": "Service",
+      "service_placeholder": "Select a service",
+      "date_time": "Preferred Date & Time",
+      "special_requests": "Special Requests (Optional)",
+      "special_requests_placeholder": "Tell us about any special requests or concerns",
+      "submit": "Request Appointment"
+    },
+    "info_title": "Contact Information",
+    "info": {
+      "visit_title": "Visit Our Salon",
+      "address": "123 Beauty Lane, Suite 45\nNew York, NY 10001",
+      "call_title": "Call Us",
+      "phone": "212-555-7890",
+      "email_title": "Email Us",
+      "email": "appointmentspolishpalettehaven.com",
+      "hours_title": "Our Hours",
+      "hours": "Monday - Friday: 9:00 AM - 7:00 PM\nSaturday: 9:00 AM - 6:00 PM\nSunday: 10:00 AM - 4:00 PM",
+      "map_title": "Salon Location"
+    }
+  },
+  "footer": {
+    "brand": "Dennys Gutierrez Nailspa",
+    "description": "Premium nail care and artistry services to elevate your personal style and boost your confidence.",
+    "quick_links_title": "Quick Links",
+    "contact": "Contact",
+    "services_title": "Our Services",
+    "services": {
+      "paraffin": "Paraffin Treatments",
+      "repair": "Nail Repair"
+    },
+    "contact_title": "Contact Us",
+    "copyright": "© {year} Dennys Gutierrez Nailspa. All rights reserved.",
+    "privacy_policy": "Privacy Policy",
+    "terms_of_service": "Terms of Service",
+    "cookie_policy": "Cookie Policy",
+    "social": {
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "twitter": "Twitter"
+    }
+  },
+  "form": {
+    "success_message": "Thank you! Your booking request has been received. We will contact you shortly."
+  }
+}

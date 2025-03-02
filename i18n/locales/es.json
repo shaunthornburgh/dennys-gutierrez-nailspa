@@ -1,0 +1,178 @@
+{
+  "navbar": {
+    "brand": "Dennys Gutierrez Nailspa",
+    "home": "Inicio",
+    "services": "Servicios",
+    "gallery": "Galería",
+    "about": "Acerca de",
+    "prices": "Precios",
+    "testimonials": "Testimonios",
+    "book_now": "Reserva Ahora",
+    "close_menu": "Cerrar menú",
+    "open_menu": "Abrir menú"
+  },
+  "hero": {
+    "tagline": "Arte y Cuidado de Uñas Premium",
+    "title_part1": "Eleva Tu",
+    "title_part2": "Estilo Personal",
+    "description": "Experimenta servicios de uñas de lujo elaborados con precisión y creatividad. Tus manos merecen el mejor cuidado.",
+    "explore_services": "Explorar Servicios",
+    "book_appointment": "Reservar Cita",
+    "scroll_down": "Desplazar Abajo"
+  },
+  "services": {
+    "tagline": "Nuestros Servicios",
+    "title": "Servicios Premium de Uñas",
+    "description": "Elige entre nuestra gama de tratamientos de uñas de lujo, cada uno realizado con un cuidado y experiencia excepcionales.",
+    "view_all": "Ver Todos los Servicios",
+    "book_now": "Reserva Ahora",
+    "items": {
+      "1": {
+        "title": "Manicura Clásica",
+        "description": "Un tratamiento atemporal que da forma a las uñas, cuida las cutículas y termina con un esmalte de tu elección."
+      },
+      "2": {
+        "title": "Extensiones de Gel",
+        "description": "Extiende la longitud de tus uñas naturales con gel duradero para una mejora hermosa y de aspecto natural."
+      },
+      "3": {
+        "title": "Pedicura Spa de Lujo",
+        "description": "Disfruta de un baño relajante para pies, exfoliación, masaje y un esmalte perfecto para pies rejuvenecidos."
+      },
+      "4": {
+        "title": "Diseño de Arte en Uñas",
+        "description": "Expresa tu estilo con arte en uñas personalizado, desde detalles sutiles hasta diseños elaborados por nuestros artistas expertos."
+      }
+    }
+  },
+  "gallery": {
+    "tagline": "Nuestro Trabajo",
+    "title": "Galería de Arte en Uñas",
+    "description": "Explora nuestra colección de diseños de uñas impresionantes creados por nuestros talentosos artistas.",
+    "filters": {
+      "all": "Todos",
+      "gel": "Gel",
+      "french": "Francés",
+      "art": "Arte",
+      "minimal": "Mínimo",
+      "classic": "Clásico"
+    },
+    "view_larger": "Ver imagen más grande",
+    "close_lightbox": "Cerrar caja de luz",
+    "images": {
+      "1": { "alt": "Manicura en gel rosa con flores" },
+      "2": { "alt": "Diseño de manicura con punta francesa" },
+      "3": { "alt": "Diseño de uñas artístico" },
+      "4": { "alt": "Manicura nude minimalista" },
+      "5": { "alt": "Arte en uñas de verano colorido" },
+      "6": { "alt": "Manicura roja clásica" }
+    }
+  },
+  "about": {
+    "tagline": "Nuestra Historia",
+    "title": "Comprometidos con el Arte en Uñas",
+    "description_part1": "Polish Palette Haven fue fundado con una visión singular: elevar el cuidado de las uñas de un servicio rutinario a una forma de arte. Con más de 15 años de experiencia en la industria de la belleza, nuestra fundadora Sophie formó un equipo de artistas de uñas apasionados que comparten su compromiso con la excelencia.",
+    "description_part2": "Creemos que todos merecen un momento de lujo en sus vidas ocupadas. Nuestro salón ofrece no solo servicios de uñas, sino una experiencia de tranquilidad y cuidado personal donde puedes rejuvenecer tanto tus uñas como tu espíritu.",
+    "stats": {
+      "years_experience": "Años de Experiencia",
+      "happy_clients": "Clientes Felices",
+      "nail_artists": "Artistas de Uñas",
+      "unique_designs": "Diseños Únicos"
+    },
+    "meet_team": "Conoce a Nuestro Equipo",
+    "image_alt": "Artista de uñas trabajando",
+    "quote": "La belleza comienza en el momento en que decides ser tú mismo.",
+    "quote_author": "— Coco Chanel"
+  },
+  "prices": {
+    "tagline": "Precios",
+    "title": "Nuestros Precios",
+    "description": "Servicios de uñas de lujo asequibles adaptados a tus necesidades. Los precios reflejan nuestro compromiso con la calidad y el cuidado."
+  },
+  "testimonials": {
+    "tagline": "Amor de los Clientes",
+    "title": "Lo Que Dicen Nuestros Clientes",
+    "description": "Las experiencias de nuestros clientes hablan volúmenes sobre nuestro compromiso con la excelencia.",
+    "prev_testimonial": "Testimonio anterior",
+    "next_testimonial": "Siguiente testimonio",
+    "go_to_testimonial": "Ir al testimonio {index}",
+    "items": {
+      "1": {
+        "name": "Sophia Rodriguez",
+        "role": "Diseñadora de Moda",
+        "quote": "Polish Palette Haven transformó mis ideas simples en un arte de uñas impresionante. Su atención al detalle y creatividad superaron mis expectativas."
+      },
+      "2": {
+        "name": "Emma Thompson",
+        "role": "Ejecutiva de Marketing",
+        "quote": "¡La pedicura de lujo fue divina! No es solo un servicio de uñas, es una experiencia de relajación completa que espero con ansias cada mes."
+      },
+      "3": {
+        "name": "James Wilson",
+        "role": "Fotógrafo",
+        "quote": "Como alguien que trabaja constantemente con mis manos, aprecio la durabilidad de sus extensiones de gel. Profesionales, amigables e increíblemente hábiles."
+      },
+      "4": {
+        "name": "Olivia Chen",
+        "role": "Directora de Arte",
+        "quote": "Los artistas de uñas en Polish Palette Haven son verdaderos maestros de su oficio. Mis uñas de boda fueron absolutamente perfectas y duraron toda la luna de miel."
+      }
+    }
+  },
+  "contact": {
+    "tagline": "Ponte en Contacto",
+    "title": "Reserva Tu Cita",
+    "description": "Programa tu sesión de uñas hoy y experimenta el arte y el cuidado que nos distingue.",
+    "form_title": "Solicitar una Cita",
+    "form": {
+      "full_name": "Nombre Completo",
+      "full_name_placeholder": "Tu nombre",
+      "email": "Dirección de Correo",
+      "email_placeholder": "Tu correo",
+      "phone": "Número de Teléfono",
+      "phone_placeholder": "Tu teléfono",
+      "service": "Servicio",
+      "service_placeholder": "Selecciona un servicio",
+      "date_time": "Fecha y Hora Preferidas",
+      "special_requests": "Solicitudes Especiales (Opcional)",
+      "special_requests_placeholder": "Cuéntanos sobre cualquier solicitud especial o preocupación",
+      "submit": "Solicitar Cita"
+    },
+    "info_title": "Información de Contacto",
+    "info": {
+      "visit_title": "Visita Nuestro Salón",
+      "address": "123 Beauty Lane, Suite 45\nNueva York, NY 10001",
+      "call_title": "Llámanos",
+      "phone": "212-555-7890",
+      "email_title": "Envíanos un Correo",
+      "email": "appointmentspolishpalettehaven.com",
+      "hours_title": "Nuestros Horarios",
+      "hours": "Lunes - Viernes: 9:00 AM - 7:00 PM\nSábado: 9:00 AM - 6:00 PM\nDomingo: 10:00 AM - 4:00 PM",
+      "map_title": "Ubicación del Salón"
+    }
+  },
+  "footer": {
+    "brand": "Dennys Gutierrez Nailspa",
+    "description": "Servicios premium de cuidado y arte en uñas para elevar tu estilo personal y aumentar tu confianza.",
+    "quick_links_title": "Enlaces Rápidos",
+    "contact": "Contacto",
+    "services_title": "Nuestros Servicios",
+    "services": {
+      "paraffin": "Tratamientos de Parafina",
+      "repair": "Reparación de Uñas"
+    },
+    "contact_title": "Contáctanos",
+    "copyright": "© {year} Dennys Gutierrez Nailspa. Todos los derechos reservados.",
+    "privacy_policy": "Política de Privacidad",
+    "terms_of_service": "Términos de Servicio",
+    "cookie_policy": "Política de Cookies",
+    "social": {
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "twitter": "Twitter"
+    }
+  },
+  "form": {
+    "success_message": "¡Gracias! Su solicitud de reserva ha sido recibida. Nos pondremos en contacto con usted pronto."
+  }
+}

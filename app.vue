@@ -12,25 +12,29 @@
     >
       <div class="max-w-7xl mx-auto flex justify-between items-center">
         <nuxt-link to="#home" class="text-2xl font-serif font-semibold">
-          Dennys Gutierrez Nailspa<span class="text-primary">.</span>
+          {{ $t('navbar.brand') }}<span class="text-primary">.</span>
         </nuxt-link>
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex space-x-1 items-center">
-          <nuxt-link to="#home" class="nav-link">Home</nuxt-link>
-          <nuxt-link to="#services" class="nav-link">Services</nuxt-link>
-          <nuxt-link to="#gallery" class="nav-link">Gallery</nuxt-link>
-          <nuxt-link to="#about" class="nav-link">About</nuxt-link>
-          <nuxt-link to="#prices" class="nav-link">Prices</nuxt-link> <!-- Added Prices link -->
-          <nuxt-link to="#testimonials" class="nav-link">Testimonials</nuxt-link>
-          <nuxt-link to="#contact" class="btn btn-primary btn-md ml-4">Book Now</nuxt-link>
+          <nuxt-link to="#home" class="nav-link">{{ $t('navbar.home') }}</nuxt-link>
+          <nuxt-link to="#services" class="nav-link">{{ $t('navbar.services') }}</nuxt-link>
+          <nuxt-link to="#gallery" class="nav-link">{{ $t('navbar.gallery') }}</nuxt-link>
+          <nuxt-link to="#about" class="nav-link">{{ $t('navbar.about') }}</nuxt-link>
+          <nuxt-link to="#prices" class="nav-link">{{ $t('navbar.prices') }}</nuxt-link>
+          <nuxt-link to="#testimonials" class="nav-link">{{ $t('navbar.testimonials') }}</nuxt-link>
+          <nuxt-link to="#contact" class="btn btn-primary btn-md ml-4">{{ $t('navbar.book_now') }}</nuxt-link>
+          <div class="ml-4 flex space-x-2">
+            <button @click="setLocale('en')" class="nav-link" :class="{ 'text-primary': locale === 'en' }">EN</button>
+            <button @click="setLocale('es')" class="nav-link" :class="{ 'text-primary': locale === 'es' }">ES</button>
+          </div>
         </div>
 
         <!-- Mobile Menu Button -->
         <button
           class="md:hidden text-neutral-800"
           @click="isOpen = !isOpen"
-          :aria-label="isOpen ? 'Close menu' : 'Open menu'"
+          :aria-label="isOpen ? $t('navbar.close_menu') : $t('navbar.open_menu')"
         >
           <X v-if="isOpen" :size="24" />
           <Menu v-else :size="24" />
@@ -40,13 +44,18 @@
       <!-- Mobile Navigation Overlay -->
       <div v-if="isOpen" class="md:hidden fixed inset-0 bg-white z-40 pt-20">
         <div class="flex flex-col space-y-6 items-center py-10">
-          <nuxt-link to="#home" class="text-xl nav-link" @click="isOpen = false">Home</nuxt-link>
-          <nuxt-link to="#services" class="text-xl nav-link" @click="isOpen = false">Services</nuxt-link>
-          <nuxt-link to="#gallery" class="text-xl nav-link" @click="isOpen = false">Gallery</nuxt-link>
-          <nuxt-link to="#about" class="text-xl nav-link" @click="isOpen = false">About</nuxt-link>
-          <nuxt-link to="#prices" class="text-xl nav-link" @click="isOpen = false">Prices</nuxt-link> <!-- Added Prices link -->
-          <nuxt-link to="#testimonials" class="text-xl nav-link" @click="isOpen = false">Testimonials</nuxt-link>
-          <nuxt-link to="#contact" class="btn btn-primary btn-lg mt-6" @click="isOpen = false">Book Now</nuxt-link>
+          <nuxt-link to="#home" class="text-xl nav-link" @click="isOpen = false">{{ $t('navbar.home') }}</nuxt-link>
+          <nuxt-link to="#services" class="text-xl nav-link" @click="isOpen = false">{{ $t('navbar.services') }}</nuxt-link>
+          <nuxt-link to="#gallery" class="text-xl nav-link" @click="isOpen = false">{{ $t('navbar.gallery') }}</nuxt-link>
+          <nuxt-link to="#about" class="text-xl nav-link" @click="isOpen = false">{{ $t('navbar.about') }}</nuxt-link>
+          <nuxt-link to="#prices" class="text-xl nav-link" @click="isOpen = false">{{ $t('navbar.prices') }}</nuxt-link>
+          <nuxt-link to="#testimonials" class="text-xl nav-link" @click="isOpen = false">{{ $t('navbar.testimonials') }}</nuxt-link>
+          <nuxt-link to="#contact" class="btn btn-primary btn-lg mt-6" @click="isOpen = false">{{ $t('navbar.book_now') }}</nuxt-link>
+          <!-- Language Switcher (Mobile) -->
+          <div class="flex space-x-4 mt-6">
+            <button @click="setLocale('en')" class="text-xl nav-link" :class="{ 'text-primary': locale === 'en' }">EN</button>
+            <button @click="setLocale('es')" class="text-xl nav-link" :class="{ 'text-primary': locale === 'es' }">ES</button>
+          </div>
         </div>
       </div>
     </nav>
@@ -69,25 +78,25 @@
         ></div>
         <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 mt-16 md:mt-0 w-full">
           <div class="max-w-xl animate-fade-in opacity-0" style="animation-delay: 0.3s; animation-fill-mode: forwards;">
-            <div class="bg-white/20 text-primary text-sm py-1 px-4 rounded-full inline-block mb-6 backdrop-blur-sm border border-primary/20 font-inter font-medium text-left">
-              Premium Nail Art & Care
+            <div class="bg-white/20 text-primary text-sm py-1 px-4 rounded-lg inline-block mb-6 backdrop-blur-sm border border-primary/20 font-inter font-medium text-left">
+              {{ $t('hero.tagline') }}
             </div>
             <h1 class="mb-6 text-left">
-              Elevate Your <br />
-              <span class="text-primary font-playfair">Personal Style</span>
+              {{ $t('hero.title_part1') }} <br />
+              <span class="text-primary font-playfair">{{ $t('hero.title_part2') }}</span>
             </h1>
             <p class="text-lg md:text-xl mb-8 text-neutral-700 max-w-md font-inter text-left">
-              Experience luxury nail services crafted with precision and creativity. Your hands deserve the finest care.
+              {{ $t('hero.description') }}
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
-              <nuxt-link to="#services" class="btn btn-primary btn-lg font-inter font-medium">Explore Services</nuxt-link>
-              <nuxt-link to="#contact" class="btn btn-outline btn-lg font-inter font-medium">Book Appointment</nuxt-link>
+              <nuxt-link to="#services" class="btn btn-primary btn-lg font-inter font-medium">{{ $t('hero.explore_services') }}</nuxt-link>
+              <nuxt-link to="#contact" class="btn btn-outline btn-lg font-inter font-medium">{{ $t('hero.book_appointment') }}</nuxt-link>
             </div>
           </div>
         </div>
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-soft-bounce">
           <nuxt-link to="#services" class="flex flex-col items-center text-neutral-500 hover:text-primary transition-colors font-inter">
-            <span class="text-sm mb-2">Scroll Down</span>
+            <span class="text-sm mb-2">{{ $t('hero.scroll_down') }}</span>
             <ChevronDown :size="20" />
           </nuxt-link>
         </div>
@@ -97,12 +106,12 @@
       <section id="services" class="section bg-neutral-50">
         <div class="max-w-7xl mx-auto">
           <div class="mb-12 text-center">
-            <div class="inline-block bg-white text-primary text-sm py-1 px-4 rounded-full mb-4 shadow-sm font-inter font-medium">
-              Our Services
+            <div class="inline-block bg-white text-primary text-sm py-1 px-4 rounded-lg mb-4 shadow-sm font-inter font-medium">
+              {{ $t('services.tagline') }}
             </div>
-            <h2 class="mb-4">Premium Nail Services</h2>
+            <h2 class="mb-4">{{ $t('services.title') }}</h2>
             <p class="section-subtitle font-inter">
-              Choose from our range of luxury nail treatments, each performed with exceptional care and expertise.
+              {{ $t('services.description') }}
             </p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -121,15 +130,15 @@
                   <div class="text-neutral-500 text-sm font-inter">{{ service.duration }}</div>
                 </div>
               </div>
-              <h3 class="mb-2">{{ service.title }}</h3>
-              <p class="text-neutral-600 mb-4 font-inter">{{ service.description }}</p>
+              <h3 class="mb-2">{{ $t(`services.items.${service.id}.title`) }}</h3>
+              <p class="text-neutral-600 mb-4 font-inter">{{ $t(`services.items.${service.id}.description`) }}</p>
               <nuxt-link to="#contact" class="inline-flex items-center text-primary hover:underline text-sm font-medium font-inter">
-                Book Now
+                {{ $t('services.book_now') }}
               </nuxt-link>
             </div>
           </div>
           <div class="text-center mt-12">
-            <nuxt-link to="#contact" class="btn btn-primary btn-md font-inter font-medium">View All Services</nuxt-link>
+            <nuxt-link to="#contact" class="btn btn-primary btn-md font-inter font-medium">{{ $t('services.view_all') }}</nuxt-link>
           </div>
         </div>
       </section>
@@ -138,12 +147,12 @@
       <section id="gallery" class="section">
         <div class="max-w-7xl mx-auto">
           <div class="text-center mb-12">
-            <div class="inline-block bg-accent text-primary text-sm py-1 px-4 rounded-full mb-4 font-inter font-medium">
-              Our Work
+            <div class="inline-block bg-accent text-primary text-sm py-1 px-4 rounded-lg mb-4 font-inter font-medium">
+              {{ $t('gallery.tagline') }}
             </div>
-            <h2 class="mb-4">Nail Art Gallery</h2>
+            <h2 class="mb-4">{{ $t('gallery.title') }}</h2>
             <p class="section-subtitle font-inter">
-              Browse our collection of stunning nail designs created by our talented artists.
+              {{ $t('gallery.description') }}
             </p>
           </div>
           <div class="flex flex-wrap justify-center gap-2 mb-10">
@@ -152,7 +161,7 @@
               :key="filter"
               @click="activeFilter = filter"
               :class="[
-                'px-4 py-2 rounded-full text-sm transition-colors duration-300 font-inter font-medium',
+                'px-4 py-2 rounded-lg text-sm transition-colors duration-300 font-inter font-medium',
                 activeFilter === filter ? 'bg-primary text-white' : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
               ]"
             >
@@ -169,22 +178,22 @@
               <div class="aspect-square overflow-hidden relative">
                 <img
                   :src="image.src"
-                  :alt="image.alt"
+                  :alt="$t(`gallery.images.${image.id}.alt`)"
                   class="w-full h-full object-cover"
                   loading="lazy"
                 />
                 <div class="gallery-overlay">
                   <button
                     @click="selectedImage = image.id"
-                    class="btn btn-primary rounded-full p-3"
-                    aria-label="View larger image"
+                    class="btn btn-primary rounded-lg p-3"
+                    :aria-label="$t('gallery.view_larger')"
                   >
                     <Eye :size="20" />
                   </button>
                 </div>
               </div>
               <div class="p-4">
-                <h3 class="text-lg font-medium font-playfair">{{ image.alt }}</h3>
+                <h3 class="text-lg font-medium font-playfair">{{ $t(`gallery.images.${image.id}.alt`) }}</h3>
                 <span class="text-sm text-neutral-500 font-inter">{{ image.category }}</span>
               </div>
             </div>
@@ -195,13 +204,13 @@
               <button
                 @click="selectedImage = null"
                 class="absolute -top-12 right-0 text-white hover:text-primary"
-                aria-label="Close lightbox"
+                :aria-label="$t('gallery.close_lightbox')"
               >
                 <X :size="24" />
               </button>
               <img
                 :src="galleryImages.find(img => img.id === selectedImage)?.src"
-                :alt="galleryImages.find(img => img.id === selectedImage)?.alt"
+                :alt="$t(`gallery.images.${selectedImage}.alt`)"
                 class="w-full rounded-lg"
               />
             </div>
@@ -211,56 +220,56 @@
 
       <!-- ===== ABOUT SECTION ====== -->
       <section id="about" class="section relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-lg -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-lg translate-y-1/2 -translate-x-1/2"></div>
         <div class="max-w-7xl mx-auto relative z-10">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div class="relative"> <!-- Removed animate-slide-in opacity-0 -->
+            <div class="relative">
               <div class="relative rounded-2xl overflow-hidden shadow-xl">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
                 <img
                   src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1000&auto=format"
-                  alt="Nail artist at work"
+                  :alt="$t('about.image_alt')"
                   class="w-full aspect-[3/4] object-cover"
                 />
               </div>
               <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg max-w-xs">
                 <p class="text-lg italic font-serif text-neutral-700 font-playfair">
-                  "Beauty begins the moment you decide to be yourself."
+                  {{ $t('about.quote') }}
                 </p>
-                <p class="text-right text-sm text-neutral-500 mt-2 font-inter">— Coco Chanel</p>
+                <p class="text-right text-sm text-neutral-500 mt-2 font-inter">{{ $t('about.quote_author') }}</p>
               </div>
             </div>
-            <div class=""> <!-- Removed animate-slide-in opacity-0 and animation-delay -->
-              <div class="inline-block bg-accent text-primary text-sm py-1 px-4 rounded-full mb-4 font-inter font-medium">
-                Our Story
+            <div>
+              <div class="inline-block bg-accent text-primary text-sm py-1 px-4 rounded-lg mb-4 font-inter font-medium">
+                {{ $t('about.tagline') }}
               </div>
-              <h2 class="mb-6">Committed to Nail Artistry</h2>
+              <h2 class="mb-6">{{ $t('about.title') }}</h2>
               <p class="text-neutral-700 mb-4 font-inter">
-                Polish Palette Haven was founded with a singular vision: to elevate nail care from a routine service to an art form. With over 15 years of experience in the beauty industry, our founder Sophie built a team of passionate nail artists who share her commitment to excellence.
+                {{ $t('about.description_part1') }}
               </p>
               <p class="text-neutral-700 mb-6 font-inter">
-                We believe that everyone deserves a moment of luxury in their busy lives. Our salon provides not just nail services, but an experience of tranquility and personal care where you can rejuvenate both your nails and your spirit.
+                {{ $t('about.description_part2') }}
               </p>
               <div class="grid grid-cols-2 gap-6 mb-8">
                 <div>
                   <div class="text-3xl font-serif text-primary font-medium mb-1 font-playfair">15+</div>
-                  <p class="text-neutral-600 font-inter">Years Experience</p>
+                  <p class="text-neutral-600 font-inter">{{ $t('about.stats.years_experience') }}</p>
                 </div>
                 <div>
                   <div class="text-3xl font-serif text-primary font-medium mb-1 font-playfair">5,000+</div>
-                  <p class="text-neutral-600 font-inter">Happy Clients</p>
+                  <p class="text-neutral-600 font-inter">{{ $t('about.stats.happy_clients') }}</p>
                 </div>
                 <div>
                   <div class="text-3xl font-serif text-primary font-medium mb-1 font-playfair">20+</div>
-                  <p class="text-neutral-600 font-inter">Nail Artists</p>
+                  <p class="text-neutral-600 font-inter">{{ $t('about.stats.nail_artists') }}</p>
                 </div>
                 <div>
                   <div class="text-3xl font-serif text-primary font-medium mb-1 font-playfair">100+</div>
-                  <p class="text-neutral-600 font-inter">Unique Designs</p>
+                  <p class="text-neutral-600 font-inter">{{ $t('about.stats.unique_designs') }}</p>
                 </div>
               </div>
-              <nuxt-link to="#contact" class="btn btn-primary btn-md font-inter font-medium">Meet Our Team</nuxt-link>
+              <nuxt-link to="#contact" class="btn btn-primary btn-md font-inter font-medium">{{ $t('about.meet_team') }}</nuxt-link>
             </div>
           </div>
         </div>
@@ -270,12 +279,12 @@
       <section id="prices" class="section bg-neutral-50">
         <div class="max-w-7xl mx-auto">
           <div class="mb-12 text-center">
-            <div class="inline-block bg-white text-primary text-sm py-1 px-4 rounded-full mb-4 shadow-sm font-inter font-medium">
-              Pricing
+            <div class="inline-block bg-white text-primary text-sm py-1 px-4 rounded-lg mb-4 shadow-sm font-inter font-medium">
+              {{ $t('prices.tagline') }}
             </div>
-            <h2 class="mb-4">Our Pricing</h2>
+            <h2 class="mb-4">{{ $t('prices.title') }}</h2>
             <p class="section-subtitle font-inter">
-              Affordable luxury nail services tailored to your needs. Prices reflect our commitment to quality and care.
+              {{ $t('prices.description') }}
             </p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -284,14 +293,14 @@
               :key="service.id"
               class="bg-white p-6 rounded-xl shadow-md border border-neutral-100"
             >
-              <h3 class="text-xl font-medium font-playfair mb-2">{{ service.title }}</h3>
-              <p class="text-neutral-600 font-inter mb-4">{{ service.description }}</p>
+              <h3 class="text-xl font-medium font-playfair mb-2">{{ $t(`services.items.${service.id}.title`) }}</h3>
+              <p class="text-neutral-600 font-inter mb-4">{{ $t(`services.items.${service.id}.description`) }}</p>
               <div class="flex justify-between items-center">
                 <span class="text-primary text-2xl font-semibold font-inter">{{ service.price }}</span>
                 <span class="text-neutral-500 font-inter">{{ service.duration }}</span>
               </div>
               <nuxt-link to="#contact" class="mt-4 inline-flex items-center text-primary hover:underline text-sm font-medium font-inter">
-                Book Now
+                {{ $t('services.book_now') }}
               </nuxt-link>
             </div>
           </div>
@@ -300,16 +309,16 @@
 
       <!-- ===== TESTIMONIALS SECTION ===== -->
       <section id="testimonials" class="section bg-neutral-50 relative overflow-hidden">
-        <div class="absolute top-10 left-10 w-40 h-40 rounded-full bg-primary/5"></div>
-        <div class="absolute bottom-10 right-10 w-60 h-60 rounded-full bg-secondary/5"></div>
+        <div class="absolute top-10 left-10 w-40 h-40 rounded-lg bg-primary/5"></div>
+        <div class="absolute bottom-10 right-10 w-60 h-60 rounded-lg bg-secondary/5"></div>
         <div class="max-w-7xl mx-auto relative z-10">
           <div class="text-center mb-16">
-            <div class="inline-block bg-white text-primary text-sm py-1 px-4 rounded-full mb-4 shadow-sm font-inter font-medium">
-              Client Love
+            <div class="inline-block bg-white text-primary text-sm py-1 px-4 rounded-lg mb-4 shadow-sm font-inter font-medium">
+              {{ $t('testimonials.tagline') }}
             </div>
-            <h2 class="mb-4">What Our Clients Say</h2>
+            <h2 class="mb-4">{{ $t('testimonials.title') }}</h2>
             <p class="section-subtitle font-inter">
-              Our customers' experiences speak volumes about our commitment to excellence.
+              {{ $t('testimonials.description') }}
             </p>
           </div>
           <div
@@ -330,10 +339,10 @@
                 >
                   <div class="testimonial-card">
                     <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
-                      <div class="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden flex-shrink-0 border-2 border-primary/20">
+                      <div class="w-20 h-20 md:w-24 md:h-24 rounded-lg overflow-hidden flex-shrink-0 border-2 border-primary/20">
                         <img
                           :src="testimonial.image"
-                          :alt="testimonial.name"
+                          :alt="$t(`testimonials.items.${testimonial.id}.name`)"
                           class="w-full h-full object-cover"
                         />
                       </div>
@@ -342,11 +351,11 @@
                           <span v-for="(_, i) in 5" :key="i" class="text-primary mr-1 text-xl">★</span>
                         </div>
                         <p class="text-lg md:text-xl italic mb-6 text-neutral-700 font-inter">
-                          "{{ testimonial.quote }}"
+                          "{{ $t(`testimonials.items.${testimonial.id}.quote`) }}"
                         </p>
                         <div>
-                          <h4 class="font-medium text-lg font-playfair">{{ testimonial.name }}</h4>
-                          <p class="text-neutral-500 font-inter">{{ testimonial.role }}</p>
+                          <h4 class="font-medium text-lg font-playfair">{{ $t(`testimonials.items.${testimonial.id}.name`) }}</h4>
+                          <p class="text-neutral-500 font-inter">{{ $t(`testimonials.items.${testimonial.id}.role`) }}</p>
                         </div>
                       </div>
                     </div>
@@ -357,8 +366,8 @@
             <div class="flex justify-center mt-8 gap-2">
               <button
                 @click="handlePrevTestimonial"
-                class="p-2 rounded-full bg-white border border-neutral-200 hover:bg-primary hover:text-white transition-colors duration-300"
-                aria-label="Previous testimonial"
+                class="p-2 rounded-lg bg-white border border-neutral-200 hover:bg-primary hover:text-white transition-colors duration-300"
+                :aria-label="$t('testimonials.prev_testimonial')"
               >
                 <ChevronLeft :size="20" />
               </button>
@@ -367,15 +376,15 @@
                 :key="index"
                 @click="activeIndex = index"
                 :class="[
-                  'w-3 h-3 rounded-full mx-1',
+                  'w-3 h-3 rounded-lg mx-1',
                   activeIndex === index ? 'bg-primary' : 'bg-neutral-300'
                 ]"
-                :aria-label="`Go to testimonial ${index + 1}`"
+                :aria-label="$t('testimonials.go_to_testimonial', { index: index + 1 })"
               />
               <button
                 @click="handleNextTestimonial"
-                class="p-2 rounded-full bg-white border border-neutral-200 hover:bg-primary hover:text-white transition-colors duration-300"
-                aria-label="Next testimonial"
+                class="p-2 rounded-lg bg-white border border-neutral-200 hover:bg-primary hover:text-white transition-colors duration-300"
+                :aria-label="$t('testimonials.next_testimonial')"
               >
                 <ChevronRight :size="20" />
               </button>
@@ -388,72 +397,72 @@
       <section id="contact" class="section">
         <div class="max-w-7xl mx-auto">
           <div class="text-center mb-16">
-            <div class="inline-block bg-accent text-primary text-sm py-1 px-4 rounded-full mb-4 font-inter font-medium">
-              Get In Touch
+            <div class="inline-block bg-accent text-primary text-sm py-1 px-4 rounded-lg mb-4 font-inter font-medium">
+              {{ $t('contact.tagline') }}
             </div>
-            <h2 class="mb-4">Book Your Appointment</h2>
+            <h2 class="mb-4">{{ $t('contact.title') }}</h2>
             <p class="section-subtitle font-inter">
-              Schedule your nail session today and experience the artistry and care that sets us apart.
+              {{ $t('contact.description') }}
             </p>
           </div>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div class="animate-slide-up opacity-0" style="animation-delay: 0.1s; animation-fill-mode: forwards;">
               <div class="bg-white rounded-xl shadow-lg p-8 border border-neutral-100">
-                <h3 class="text-2xl mb-6">Request an Appointment</h3>
+                <h3 class="text-2xl mb-6">{{ $t('contact.form_title') }}</h3>
                 <form @submit.prevent="handleFormSubmit">
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
-                      <label for="name" class="block text-sm font-medium text-neutral-700 mb-1 font-inter">Full Name</label>
+                      <label for="name" class="block text-sm font-medium text-neutral-700 mb-1 font-inter">{{ $t('contact.form.full_name') }}</label>
                       <input
                         type="text"
                         id="name"
                         v-model="formData.name"
                         required
                         class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 font-inter"
-                        placeholder="Your name"
+                        :placeholder="$t('contact.form.full_name_placeholder')"
                       />
                     </div>
                     <div>
-                      <label for="email" class="block text-sm font-medium text-neutral-700 mb-1 font-inter">Email Address</label>
+                      <label for="email" class="block text-sm font-medium text-neutral-700 mb-1 font-inter">{{ $t('contact.form.email') }}</label>
                       <input
                         type="email"
                         id="email"
                         v-model="formData.email"
                         required
                         class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 font-inter"
-                        placeholder="Your email"
+                        :placeholder="$t('contact.form.email_placeholder')"
                       />
                     </div>
                   </div>
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
-                      <label for="phone" class="block text-sm font-medium text-neutral-700 mb-1 font-inter">Phone Number</label>
+                      <label for="phone" class="block text-sm font-medium text-neutral-700 mb-1 font-inter">{{ $t('contact.form.phone') }}</label>
                       <input
                         type="tel"
                         id="phone"
                         v-model="formData.phone"
                         class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 font-inter"
-                        placeholder="Your phone"
+                        :placeholder="$t('contact.form.phone_placeholder')"
                       />
                     </div>
                     <div>
-                      <label for="service" class="block text-sm font-medium text-neutral-700 mb-1 font-inter">Service</label>
+                      <label for="service" class="block text-sm font-medium text-neutral-700 mb-1 font-inter">{{ $t('contact.form.service') }}</label>
                       <select
                         id="service"
                         v-model="formData.service"
                         required
                         class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 font-inter"
                       >
-                        <option value="">Select a service</option>
-                        <option value="Classic Manicure">Classic Manicure</option>
-                        <option value="Gel Extensions">Gel Extensions</option>
-                        <option value="Luxury Spa Pedicure">Luxury Spa Pedicure</option>
-                        <option value="Nail Art Design">Nail Art Design</option>
+                        <option value="">{{ $t('contact.form.service_placeholder') }}</option>
+                        <option value="Classic Manicure">{{ $t('services.items.1.title') }}</option>
+                        <option value="Gel Extensions">{{ $t('services.items.2.title') }}</option>
+                        <option value="Luxury Spa Pedicure">{{ $t('services.items.3.title') }}</option>
+                        <option value="Nail Art Design">{{ $t('services.items.4.title') }}</option>
                       </select>
                     </div>
                   </div>
                   <div class="mb-4">
-                    <label for="date" class="block text-sm font-medium text-neutral-700 mb-1 font-inter">Preferred Date & Time</label>
+                    <label for="date" class="block text-sm font-medium text-neutral-700 mb-1 font-inter">{{ $t('contact.form.date_time') }}</label>
                     <input
                       type="datetime-local"
                       id="date"
@@ -463,62 +472,60 @@
                     />
                   </div>
                   <div class="mb-6">
-                    <label for="message" class="block text-sm font-medium text-neutral-700 mb-1 font-inter">Special Requests (Optional)</label>
+                    <label for="message" class="block text-sm font-medium text-neutral-700 mb-1 font-inter">{{ $t('contact.form.special_requests') }}</label>
                     <textarea
                       id="message"
                       v-model="formData.message"
                       rows="4"
                       class="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 font-inter"
-                      placeholder="Tell us about any special requests or concerns"
+                      :placeholder="$t('contact.form.special_requests_placeholder')"
                     ></textarea>
                   </div>
                   <button type="submit" class="w-full btn btn-primary btn-md font-medium font-inter">
-                    Request Appointment
+                    {{ $t('contact.form.submit') }}
                   </button>
                 </form>
               </div>
             </div>
             <div class="animate-slide-up opacity-0" style="animation-delay: 0.3s; animation-fill-mode: forwards;">
               <div class="bg-white rounded-xl shadow-lg p-8 border border-neutral-100 h-full">
-                <h3 class="text-2xl mb-6">Contact Information</h3>
+                <h3 class="text-2xl mb-6">{{ $t('contact.info_title') }}</h3>
                 <div class="space-y-6 mb-8">
                   <div class="contact-info">
-                    <div class="p-3 rounded-full bg-primary/10">
+                    <div class="p-3 rounded-lg bg-primary/10">
                       <MapPin class="text-primary w-5 h-5" />
                     </div>
                     <div>
-                      <h4 class="font-medium font-playfair">Visit Our Salon</h4>
-                      <p class="text-neutral-600 font-inter">123 Beauty Lane, Suite 45<br />New York, NY 10001</p>
+                      <h4 class="font-medium font-playfair">{{ $t('contact.info.visit_title') }}</h4>
+                      <p class="text-neutral-600 font-inter">{{ $t('contact.info.address') }}</p>
                     </div>
                   </div>
                   <div class="contact-info">
-                    <div class="p-3 rounded-full bg-primary/10">
+                    <div class="p-3 rounded-lg bg-primary/10">
                       <Phone class="text-primary w-5 h-5" />
                     </div>
                     <div>
-                      <h4 class="font-medium font-playfair">Call Us</h4>
-                      <p class="text-neutral-600 font-inter">212-555-7890</p>
+                      <h4 class="font-medium font-playfair">{{ $t('contact.info.call_title') }}</h4>
+                      <p class="text-neutral-600 font-inter">{{ $t('contact.info.phone') }}</p>
                     </div>
                   </div>
                   <div class="contact-info">
-                    <div class="p-3 rounded-full bg-primary/10">
+                    <div class="p-3 rounded-lg bg-primary/10">
                       <Mail class="text-primary w-5 h-5" />
                     </div>
                     <div>
-                      <h4 class="font-medium font-playfair">Email Us</h4>
-                      <p class="text-neutral-600 font-inter">appointments@polishpalettehaven.com</p>
+                      <h4 class="font-medium font-playfair">{{ $t('contact.info.email_title') }}</h4>
+                      <p class="text-neutral-600 font-inter">{{ $t('contact.info.email') }}</p>
                     </div>
                   </div>
                   <div class="contact-info">
-                    <div class="p-3 rounded-full bg-primary/10">
+                    <div class="p-3 rounded-lg bg-primary/10">
                       <Clock class="text-primary w-5 h-5" />
                     </div>
                     <div>
-                      <h4 class="font-medium font-playfair">Our Hours</h4>
+                      <h4 class="font-medium font-playfair">{{ $t('contact.info.hours_title') }}</h4>
                       <p class="text-neutral-600 font-inter">
-                        Monday - Friday: 9:00 AM - 7:00 PM<br />
-                        Saturday: 9:00 AM - 6:00 PM<br />
-                        Sunday: 10:00 AM - 4:00 PM
+                        {{ $t('contact.info.hours') }}
                       </p>
                     </div>
                   </div>
@@ -531,7 +538,7 @@
                     allowfullscreen
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
-                    title="Salon Location"
+                    :title="$t('contact.info.map_title')"
                   ></iframe>
                 </div>
               </div>
@@ -547,55 +554,55 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <h3 class="text-2xl font-serif mb-6 font-playfair">
-              Dennys Gutierrez Nailspa<span class="text-primary">.</span>
+              {{ $t('footer.brand') }}<span class="text-primary">.</span>
             </h3>
             <p class="text-neutral-400 mb-6 font-inter">
-              Premium nail care and artistry services to elevate your personal style and boost your confidence.
+              {{ $t('footer.description') }}
             </p>
             <div class="flex space-x-4">
-              <a href="#" class="p-2 bg-neutral-800 rounded-full hover:bg-primary transition-colors duration-300" aria-label="Instagram">
+              <a href="#" class="p-2 bg-neutral-800 rounded-lg hover:bg-primary transition-colors duration-300" :aria-label="$t('footer.social.instagram')">
                 <Instagram :size="18" />
               </a>
-              <a href="#" class="p-2 bg-neutral-800 rounded-full hover:bg-primary transition-colors duration-300" aria-label="Facebook">
+              <a href="#" class="p-2 bg-neutral-800 rounded-lg hover:bg-primary transition-colors duration-300" :aria-label="$t('footer.social.facebook')">
                 <Facebook :size="18" />
               </a>
-              <a href="#" class="p-2 bg-neutral-800 rounded-full hover:bg-primary transition-colors duration-300" aria-label="Twitter">
+              <a href="#" class="p-2 bg-neutral-800 rounded-lg hover:bg-primary transition-colors duration-300" :aria-label="$t('footer.social.twitter')">
                 <Twitter :size="18" />
               </a>
             </div>
           </div>
           <div>
-            <h4 class="text-lg font-medium mb-6 font-playfair">Quick Links</h4>
+            <h4 class="text-lg font-medium mb-6 font-playfair">{{ $t('footer.quick_links_title') }}</h4>
             <ul class="space-y-3">
-              <li><nuxt-link to="#home" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">Home</nuxt-link></li>
-              <li><nuxt-link to="#services" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">Services</nuxt-link></li>
-              <li><nuxt-link to="#gallery" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">Gallery</nuxt-link></li>
-              <li><nuxt-link to="#about" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">About Us</nuxt-link></li>
-              <li><nuxt-link to="#prices" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">Prices</nuxt-link></li> <!-- Added Prices link -->
-              <li><nuxt-link to="#testimonials" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">Testimonials</nuxt-link></li>
-              <li><nuxt-link to="#contact" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">Contact</nuxt-link></li>
+              <li><nuxt-link to="#home" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">{{ $t('navbar.home') }}</nuxt-link></li>
+              <li><nuxt-link to="#services" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">{{ $t('navbar.services') }}</nuxt-link></li>
+              <li><nuxt-link to="#gallery" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">{{ $t('navbar.gallery') }}</nuxt-link></li>
+              <li><nuxt-link to="#about" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">{{ $t('navbar.about') }}</nuxt-link></li>
+              <li><nuxt-link to="#prices" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">{{ $t('navbar.prices') }}</nuxt-link></li>
+              <li><nuxt-link to="#testimonials" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">{{ $t('navbar.testimonials') }}</nuxt-link></li>
+              <li><nuxt-link to="#contact" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">{{ $t('footer.contact') }}</nuxt-link></li>
             </ul>
           </div>
           <div>
-            <h4 class="text-lg font-medium mb-6 font-playfair">Our Services</h4>
+            <h4 class="text-lg font-medium mb-6 font-playfair">{{ $t('footer.services_title') }}</h4>
             <ul class="space-y-3">
-              <li><nuxt-link to="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">Classic Manicure</nuxt-link></li>
-              <li><nuxt-link to="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">Gel Extensions</nuxt-link></li>
-              <li><nuxt-link to="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">Luxury Spa Pedicure</nuxt-link></li>
-              <li><nuxt-link to="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">Nail Art Design</nuxt-link></li>
-              <li><nuxt-link to="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">Paraffin Treatments</nuxt-link></li>
-              <li><nuxt-link to="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">Nail Repair</nuxt-link></li>
+              <li><nuxt-link to="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">{{ $t('services.items.1.title') }}</nuxt-link></li>
+              <li><nuxt-link to="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">{{ $t('services.items.2.title') }}</nuxt-link></li>
+              <li><nuxt-link to="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">{{ $t('services.items.3.title') }}</nuxt-link></li>
+              <li><nuxt-link to="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">{{ $t('services.items.4.title') }}</nuxt-link></li>
+              <li><nuxt-link to="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">{{ $t('footer.services.paraffin') }}</nuxt-link></li>
+              <li><nuxt-link to="#" class="text-neutral-400 hover:text-primary transition-colors duration-300 font-inter">{{ $t('footer.services.repair') }}</nuxt-link></li>
             </ul>
           </div>
           <div>
-            <h4 class="text-lg font-medium mb-6 font-playfair">Contact Us</h4>
+            <h4 class="text-lg font-medium mb-6 font-playfair">{{ $t('footer.contact_title') }}</h4>
             <address class="not-italic text-neutral-400 font-inter">
-              <p class="mb-3">123 Beauty Lane, Suite 45<br />New York, NY 10001</p>
+              <p class="mb-3">{{ $t('contact.info.address') }}</p>
               <p class="mb-3">
-                <a href="tel:2125557890" class="hover:text-primary transition-colors duration-300">212-555-7890</a>
+                <a href="tel:2125557890" class="hover:text-primary transition-colors duration-300">{{ $t('contact.info.phone') }}</a>
               </p>
               <p class="mb-3">
-                <a href="mailto:appointments@polishpalettehaven.com" class="hover:text-primary transition-colors duration-300">appointments@polishpalettehaven.com</a>
+                <a href="mailto:appointments@polishpalettehaven.com" class="hover:text-primary transition-colors duration-300">{{ $t('contact.info.email') }}</a>
               </p>
             </address>
           </div>
@@ -603,12 +610,12 @@
         <hr class="border-neutral-800 my-8" />
         <div class="flex flex-col md:flex-row justify-between items-center">
           <p class="text-neutral-500 text-sm mb-4 md:mb-0 font-inter">
-            © {{ currentYear }} Dennys Gutierrez Nailspa. All rights reserved.
+            {{ $t('footer.copyright', { year: currentYear }) }}
           </p>
           <div class="flex space-x-6 text-sm">
-            <nuxt-link to="#" class="text-neutral-500 hover:text-primary transition-colors duration-300 font-inter">Privacy Policy</nuxt-link>
-            <nuxt-link to="#" class="text-neutral-500 hover:text-primary transition-colors duration-300 font-inter">Terms of Service</nuxt-link>
-            <nuxt-link to="#" class="text-neutral-500 hover:text-primary transition-colors duration-300 font-inter">Cookie Policy</nuxt-link>
+            <nuxt-link to="#" class="text-neutral-500 hover:text-primary transition-colors duration-300 font-inter">{{ $t('footer.privacy_policy') }}</nuxt-link>
+            <nuxt-link to="#" class="text-neutral-500 hover:text-primary transition-colors duration-300 font-inter">{{ $t('footer.terms_of_service') }}</nuxt-link>
+            <nuxt-link to="#" class="text-neutral-500 hover:text-primary transition-colors duration-300 font-inter">{{ $t('footer.cookie_policy') }}</nuxt-link>
           </div>
         </div>
       </div>
@@ -618,6 +625,9 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted, computed } from 'vue';
+
+// Use the Composition API
+const { t, locale, setLocale } = useI18n();
 
 // --- NavBar state ---
 const isScrolled = ref(false);
@@ -648,56 +658,28 @@ const formData = ref({
 
 // --- Services data ---
 const services = [
-  {
-    id: 1,
-    title: "Classic Manicure",
-    description: "A timeless treatment that shapes the nails, cares for cuticles, and finishes with a polish of your choice.",
-    price: "$35",
-    duration: "45 min",
-    icon: 'Scissors'
-  },
-  {
-    id: 2,
-    title: "Gel Extensions",
-    description: "Extend the length of your natural nails with durable gel for a beautiful, natural-looking enhancement.",
-    price: "$65",
-    duration: "75 min",
-    icon: 'Palette'
-  },
-  {
-    id: 3,
-    title: "Luxury Spa Pedicure",
-    description: "Indulge in a relaxing foot soak, exfoliation, massage, and perfect polish for rejuvenated feet.",
-    price: "$55",
-    duration: "60 min",
-    icon: 'Heart'
-  },
-  {
-    id: 4,
-    title: "Nail Art Design",
-    description: "Express your style with custom nail art, from subtle accents to elaborate designs by our skilled artists.",
-    price: "from $20",
-    duration: "30+ min",
-    icon: 'Sparkles'
-  }
+  { id: 1, price: '$35', duration: '45 min', icon: 'Scissors' },
+  { id: 2, price: '$65', duration: '75 min', icon: 'Palette' },
+  { id: 3, price: '$55', duration: '60 min', icon: 'Heart' },
+  { id: 4, price: 'from $20', duration: '30+ min', icon: 'Sparkles' }
 ];
 
 // --- Gallery images ---
 const galleryImages = [
-  { id: 1, src: "https://images.unsplash.com/photo-1604902396830-aca29e19b067?q=80&w=1000&auto=format", alt: "Pink gel manicure with flowers", category: "Gel" },
-  { id: 2, src: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=1000&auto=format", alt: "French tip manicure design", category: "French" },
-  { id: 3, src: "https://images.unsplash.com/photo-1600014770603-0fd6989ee83e?q=80&w=1000&auto=format", alt: "Artistic nail design", category: "Art" },
-  { id: 4, src: "https://images.unsplash.com/photo-1610992235683-e42ab16aca8c?q=80&w=1000&auto=format", alt: "Minimal nude manicure", category: "Minimal" },
-  { id: 5, src: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=1000&auto=format", alt: "Colorful summer nail art", category: "Art" },
-  { id: 6, src: "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1000&auto=format", alt: "Classic red manicure", category: "Classic" },
+  { id: 1, src: 'https://images.unsplash.com/photo-1604902396830-aca29e19b067?q=80&w=1000&auto=format', category: 'Gel' },
+  { id: 2, src: 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=1000&auto=format', category: 'French' },
+  { id: 3, src: 'https://images.unsplash.com/photo-1600014770603-0fd6989ee83e?q=80&w=1000&auto=format', category: 'Art' },
+  { id: 4, src: 'https://images.unsplash.com/photo-1610992235683-e42ab16aca8c?q=80&w=1000&auto=format', category: 'Minimal' },
+  { id: 5, src: 'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=1000&auto=format', category: 'Art' },
+  { id: 6, src: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1000&auto=format', category: 'Classic' }
 ];
 
 // --- Testimonials data ---
 const testimonials = [
-  { id: 1, name: "Sophia Rodriguez", role: "Fashion Designer", image: "https://randomuser.me/api/portraits/women/62.jpg", quote: "Polish Palette Haven transformed my simple ideas into stunning nail art. Their attention to detail and creativity exceeded my expectations." },
-  { id: 2, name: "Emma Thompson", role: "Marketing Executive", image: "https://randomuser.me/api/portraits/women/44.jpg", quote: "The luxury pedicure was divine! It's not just a nail service, it's a complete relaxation experience that I look forward to every month." },
-  { id: 3, name: "James Wilson", role: "Photographer", image: "https://randomuser.me/api/portraits/men/32.jpg", quote: "As someone who works with my hands constantly, I appreciate the durability of their gel extensions. Professional, friendly, and incredibly skilled." },
-  { id: 4, name: "Olivia Chen", role: "Art Director", image: "https://randomuser.me/api/portraits/women/79.jpg", quote: "The nail artists at Polish Palette Haven are true masters of their craft. My wedding nails were absolutely perfect and lasted through the honeymoon!" }
+  { id: 1, image: 'https://randomuser.me/api/portraits/women/62.jpg' },
+  { id: 2, image: 'https://randomuser.me/api/portraits/women/44.jpg' },
+  { id: 3, image: 'https://randomuser.me/api/portraits/men/32.jpg' },
+  { id: 4, image: 'https://randomuser.me/api/portraits/women/79.jpg' }
 ];
 
 // --- Computed properties ---
@@ -709,7 +691,6 @@ const currentYear = computed(() => new Date().getFullYear());
 
 // --- Effects ---
 onMounted(() => {
-  // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       e.preventDefault();
@@ -723,7 +704,6 @@ onMounted(() => {
     });
   });
 
-  // Intersection Observer for animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -733,13 +713,11 @@ onMounted(() => {
   }, { threshold: 0.1 });
   document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
-  // Scroll handler for navbar
   const handleScroll = () => {
     isScrolled.value = window.scrollY > 10;
   };
   window.addEventListener('scroll', handleScroll);
 
-  // Testimonials auto-advance
   timerRef.value = setInterval(() => {
     activeIndex.value = (activeIndex.value === testimonials.length - 1) ? 0 : activeIndex.value + 1;
   }, 5000);
@@ -779,7 +757,7 @@ const handleTouchEnd = () => {
 
 const handleFormSubmit = () => {
   console.log('Form submitted:', formData.value);
-  $toast.success('Thank you! Your booking request has been received. We will contact you shortly.');
+  $toast.success($t('form.success_message'));
   formData.value = { name: '', email: '', phone: '', service: '', date: '', message: '' };
 };
 </script>

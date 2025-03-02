@@ -40,8 +40,8 @@
 .animate-soft-bounce { animation: softBounce 2s infinite ease-in-out; }
 
 /* Custom classes */
-.nav-link { @apply px-4 py-2 rounded-full text-neutral-700 hover:text-primary hover:bg-primary/10 transition-colors duration-300; }
-.btn { @apply px-6 py-3 rounded-lg font-medium transition-colors duration-300; } /* Changed from rounded-full to rounded-lg */
+.nav-link { @apply px-4 py-2 rounded-lg text-neutral-700 hover:text-primary hover:bg-primary/10 transition-colors duration-300; }
+.btn { @apply px-6 py-3 rounded-lg font-medium transition-colors duration-300; } /* Changed from rounded-lg to rounded-lg */
 .btn-primary { @apply bg-primary text-white hover:bg-primary/90; }
 .btn-outline { @apply border border-primary text-primary hover:bg-primary hover:text-white; }
 .btn-md { @apply px-5 py-2 text-sm; }
