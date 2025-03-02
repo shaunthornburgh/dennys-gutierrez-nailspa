@@ -18,11 +18,29 @@ export default defineNuxtConfig({
   },
   i18n: {
     locales: [
-      { code: 'en', iso: 'en-US', file: 'en.json' },
-      { code: 'es', iso: 'es-ES', file: 'es.json' }
+      {
+        code: 'en',
+        iso: 'en-US',
+        file: 'en.json',
+        language: 'en-US',
+        name: 'English'
+      },
+      {
+        code: 'es',
+        iso: 'es-ES',
+        file: 'es.json' ,
+        language: 'es-ES',
+        name: 'Español'
+      }
     ],
     defaultLocale: 'en',
     lazy: true,
+    strategy: 'prefix_except_default', // Adds /en and /es prefixes, except for default 'en'
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root' // Redirect only on root (/)
+    }
   },
   compatibilityDate: '2025-03-02'
 });

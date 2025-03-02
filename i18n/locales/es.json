@@ -20,6 +20,10 @@
     "book_appointment": "Reservar Cita",
     "scroll_down": "Desplazar Abajo"
   },
+  "seo": {
+    "title": "Dennys Gutierrez Nailspa - Servicios de Uñas de Lujo",
+    "description": "Experimenta servicios de uñas de lujo elaborados con precisión y creatividad en Dennys Gutierrez Nailspa."
+  },
   "services": {
     "tagline": "Nuestros Servicios",
     "title": "Servicios Premium de Uñas",
@@ -141,11 +145,12 @@
     "info_title": "Información de Contacto",
     "info": {
       "visit_title": "Visita Nuestro Salón",
-      "address": "123 Beauty Lane, Suite 45\nNueva York, NY 10001",
+      "address": "Cra. 41 #33b SUR 35, Zona 9, Envigado, Antioquia, Colombia",
       "call_title": "Llámanos",
-      "phone": "212-555-7890",
+      "phone": "+573122855002",
       "email_title": "Envíanos un Correo",
-      "email": "appointmentspolishpalettehaven.com",
+      "email_user": "degu1412",
+      "email_domain": "hotmail.com.ar",
       "hours_title": "Nuestros Horarios",
       "hours": "Lunes - Viernes: 9:00 AM - 7:00 PM\nSábado: 9:00 AM - 6:00 PM\nDomingo: 10:00 AM - 4:00 PM",
       "map_title": "Ubicación del Salón"

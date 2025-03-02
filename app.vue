@@ -515,7 +515,9 @@
                     </div>
                     <div>
                       <h4 class="font-medium font-playfair">{{ $t('contact.info.email_title') }}</h4>
-                      <p class="text-neutral-600 font-inter">{{ $t('contact.info.email') }}</p>
+                      <p class="text-neutral-600 font-inter">
+                        {{ $t('contact.info.email_user') + '@' + $t('contact.info.email_domain') }}
+                      </p>
                     </div>
                   </div>
                   <div class="contact-info">
@@ -532,7 +534,7 @@
                 </div>
                 <div class="rounded-lg overflow-hidden h-64 relative">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30589520445!2d-74.25986630089809!3d40.697149422113014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1713385941021!5m2!1sen!2sus"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.318078313318!2d-75.591956685185!3d6.171193395529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46826a8f2b3b3d%3A0x6c6e5f5f5f5f5f5f!2sCra.%2041%20%2333b%20Sur%2035%2C%20Envigado%2C%20Antioquia%2C%20Colombia!5e0!3m2!1sen!2sus!4v1698765432100!5m2!1sen!2sus"
                     class="w-full h-full"
                     style="border: 0;"
                     allowfullscreen
@@ -602,7 +604,7 @@
                 <a href="tel:2125557890" class="hover:text-primary transition-colors duration-300">{{ $t('contact.info.phone') }}</a>
               </p>
               <p class="mb-3">
-                <a href="mailto:appointments@polishpalettehaven.com" class="hover:text-primary transition-colors duration-300">{{ $t('contact.info.email') }}</a>
+                <a :href="'mailto:' + $t('contact.info.email_user') + '@' + $t('contact.info.email_domain')" class="hover:text-primary transition-colors duration-300">{{ $t('contact.info.email_user') + '@' + $t('contact.info.email_domain') }}</a>
               </p>
             </address>
           </div>
@@ -645,6 +647,10 @@ const activeIndex = ref(0);
 const touchStart = ref(0);
 const touchEnd = ref(0);
 const timerRef = ref(null);
+
+useHead({
+  title: t('seo.title')
+});
 
 // --- Contact state ---
 const formData = ref({
