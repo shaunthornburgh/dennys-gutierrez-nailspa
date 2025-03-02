@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    *, *:before, *:after {
+        @apply box-border;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-playfair font-bold;
+    }
+    p, a, span, div, input, textarea, select, button {
+        @apply font-inter;
+    }
+    h1 {
+        @apply text-4xl md:text-5xl lg:text-6xl leading-tight;
+    }
+    h2 {
+        @apply text-3xl md:text-4xl;
+    }
+    h3 {
+        @apply text-xl md:text-2xl font-semibold;
+    }
+}
+
+/* Animations */
+@keyframes logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+@keyframes softBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+.animate-in { animation: fadeIn 0.5s ease-out forwards; }
+.animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
+.animate-slide-up { animation: slideUp 0.5s ease-out forwards; }
+.animate-scale-in { animation: scaleIn 0.5s ease-out forwards; }
+.animate-soft-bounce { animation: softBounce 2s infinite ease-in-out; }
+
+/* Custom classes */
+.nav-link { @apply px-4 py-2 rounded-full text-neutral-700 hover:text-primary hover:bg-primary/10 transition-colors duration-300; }
+.btn { @apply px-6 py-3 rounded-lg font-medium transition-colors duration-300; } /* Changed from rounded-full to rounded-lg */
+.btn-primary { @apply bg-primary text-white hover:bg-primary/90; }
+.btn-outline { @apply border border-primary text-primary hover:bg-primary hover:text-white; }
+.btn-md { @apply px-5 py-2 text-sm; }
+.btn-lg { @apply px-8 py-4 text-base; }
+.section { @apply py-20 px-6; }
+.section-subtitle { @apply text-neutral-600 max-w-xl mx-auto; }
+.service-card { @apply bg-white p-8 rounded-xl shadow-md border border-neutral-100 hover:shadow-lg transition-shadow; }
+.gallery-item { @apply relative cursor-pointer; }
+.gallery-overlay { @apply absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300; }
+.testimonial-card { @apply bg-white p-8 rounded-xl shadow-md border border-neutral-100; }
+.contact-info { @apply flex items-start gap-4; }
+.image-glow { @apply shadow-[0_0_40px_rgba(244,114,182,0.5)]; }
+
+/* From App.css */
+.logo {
+    @apply h-24 p-6 transition duration-300;
+}
+.logo:hover {
+    filter: drop-shadow(0 0 2em rgba(242, 28, 113, 0.6));
+}
+.logo.react:hover {
+    filter: drop-shadow(0 0 2em rgba(77, 77, 82, 0.6));
+}
+@media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+        animation: logo-spin infinite 20s linear;
+    }
+}
+.card {
+    @apply p-8;
+}
+.read-the-docs {
+    @apply text-primary;
+}
