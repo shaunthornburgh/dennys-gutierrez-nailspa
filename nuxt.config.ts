@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     }
   },
   i18n: {
+    baseUrl: process.env.NUXT_BASE_URL,
     locales: [
       {
         code: 'en',
