@@ -43,7 +43,9 @@ export default defineNuxtConfig({
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
-      redirectOn: 'root' // Redirect only on root (/)
+      redirectOn: 'root',
+      alwaysRedirect: process.env.NODE_ENV === 'production',  // Only redirect in prod
+      cookieDomain: process.env.NODE_ENV === 'production' ? '.dennysgutierreznailspa.com' : null  // No domain locally
     }
   },
   compatibilityDate: '2025-03-02'
