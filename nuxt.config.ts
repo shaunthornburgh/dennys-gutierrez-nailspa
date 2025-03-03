@@ -44,8 +44,8 @@ export default defineNuxtConfig({
       useCookie: true,
       cookieKey: 'i18n_redirected',
       redirectOn: 'root',
-      alwaysRedirect: process.env.NODE_ENV === 'production',  // Only redirect in prod
-      cookieDomain: process.env.NODE_ENV === 'production' ? '.dennysgutierreznailspa.com' : null  // No domain locally
+      alwaysRedirect: true,  // Force redirect to baseUrl
+      cookieDomain: '.dennysgutierreznailspa.com'
     }
   },
   compatibilityDate: '2025-03-02'
