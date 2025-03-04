@@ -740,6 +740,11 @@ const currentYear = computed(() => new Date().getFullYear());
 
 // --- Effects ---
 onMounted(() => {
+  // Force Spanish as default if not already set
+  if (locale.value !== 'es') {
+    setLocale('es');
+  }
+
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       e.preventDefault();
