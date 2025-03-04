@@ -61,7 +61,15 @@
 
       <!-- Mobile Navigation Overlay -->
       <div v-if="isOpen" class="md:hidden fixed inset-0 bg-white z-40 pt-20">
-        <div class="flex flex-col space-y-6 items-center py-10">
+        <div class="flex flex-col space-y-6 items-center py-10 relative">
+          <!-- Dedicated Close Button -->
+          <button
+            @click="isOpen = false"
+            class="absolute top-4 right-4 text-neutral-800 hover:text-primary"
+            :aria-label="$t('navbar.close_menu')"
+          >
+            <X :size="24" />
+          </button>
           <nuxt-link to="#home" class="text-xl nav-link" @click="isOpen = false">{{ $t('navbar.home') }}</nuxt-link>
           <nuxt-link to="#services" class="text-xl nav-link" @click="isOpen = false">{{ $t('navbar.services') }}</nuxt-link>
           <nuxt-link to="#gallery" class="text-xl nav-link" @click="isOpen = false">{{ $t('navbar.gallery') }}</nuxt-link>

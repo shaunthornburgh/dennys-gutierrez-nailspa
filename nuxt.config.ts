@@ -37,7 +37,7 @@ export default defineNuxtConfig({
         name: 'Español'
       }
     ],
-    defaultLocale: 'en',
+    defaultLocale: 'es',
     lazy: true,
     strategy: 'prefix_except_default', // Adds /en and /es prefixes, except for default 'en'
     detectBrowserLanguage: {
